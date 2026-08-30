@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@astrojs/node": "^11.1.4",
+    "@astrojs/vercel": "^11.0.8",
     "@tinacms/astro": "^0.6.1",
     "astro": "^7.2.9",
     "tinacms": "^3.12.1"
