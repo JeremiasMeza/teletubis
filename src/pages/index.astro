@@ -45,6 +45,16 @@ const renderedItems = await Promise.all(
           <li class:list={['timeline-item', index % 2 === 0 ? 'left' : 'right']}>
             <div class="dot">♥</div>
             <div class="card">
+              {item.data.image && (
+                <div class="card-image-wrapper">
+                  <img
+                    src={item.data.image}
+                    alt={item.data.title ?? 'Foto del recuerdo'}
+                    class="card-image"
+                    loading="lazy"
+                  />
+                </div>
+              )}
               <time datetime={new Date(item.data.date).toISOString()}>
                 {new Date(item.data.date).toLocaleDateString('es-ES', {
                   day: 'numeric',
@@ -201,12 +211,28 @@ const renderedItems = await Promise.all(
         box-shadow: 0 6px 18px rgba(214, 138, 154, 0.15);
         border: 1px solid var(--rosa-suave);
         transition: transform 0.25s ease, box-shadow 0.25s ease;
+        text-align: left;
       }
 
       .card:hover {
         transform: translateY(-3px);
         box-shadow: 0 10px 24px rgba(214, 138, 154, 0.25);
       }
+
+      .card-image-wrapper {
+		width: 100%;
+		aspect-ratio: 1 / 1;
+		overflow: hidden;
+		border-radius: 12px;
+		margin-bottom: 0.8rem;
+		}
+
+		.card-image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+		}
 
       .card time {
         display: block;
