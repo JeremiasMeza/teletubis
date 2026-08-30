@@ -1,0 +1,31 @@
+---
+// Formato AAAA-MM-DDTHH:MM:SS
+const startDate = "2023-01-01T00:00:00"; 
+---
+
+<div id="counter-container">
+  <h3>Tiempo juntos:</h3>
+  <p id="counter-display">Calculando...</p>
+</div>
+
+<script define:vars={{ startDate }}>
+  const start = new Date(startDate).getTime();
+
+  function updateCounter() {
+    const now = new Date().getTime();
+    const diff = now - start;
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    const display = document.getElementById("counter-display");
+    if (display) {
+      display.innerText = `${days} días, ${hours} horas, ${minutes} minutos, ${seconds} segundos`;
+    }
+  }
+
+  updateCounter();
+  setInterval(updateCounter, 1000);
+</script>
