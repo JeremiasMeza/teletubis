@@ -1,6 +1,6 @@
 ---
 title: Comenzó el pololeo
-date: 2026-08-23T00:30:38.808Z
+date: 2026-08-22T00:30:38.808Z
 image: /uploads/WhatsApp-Image-2026-08-30-at-8.13.38-PM.jpeg
 ---
 
