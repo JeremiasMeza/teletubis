@@ -1,5 +1,5 @@
 ---
-title: Paseitos poor la plaza de chanco
+title: Paseitos por la plaza de chanco
 date: 2026-08-29T23:25:15.259Z
 image: /uploads/IMG_7013.jpeg
 ---
